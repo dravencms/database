@@ -1,13 +1,13 @@
-# DravenCMS base
+# DravenCMS database
 
-This is a Draven CMS base
+This is a Draven CMS database package
 
 ## Instalation
 
-The best way to install dravencms/base is using  [Composer](http://getcomposer.org/):
+The best way to install dravencms/database is using  [Composer](http://getcomposer.org/):
 
 
 ```sh
-$ composer require dravencms/base
+$ composer require dravencms/database
 ```
 
