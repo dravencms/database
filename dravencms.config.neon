@@ -9,6 +9,7 @@ extensions:
 	nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
 	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
 	nettrine.orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
+	nettrine.extensions.atlantic18: Nettrine\Extensions\Atlantic18\DI\Atlantic18BehaviorExtension
 
 nettrine.dbal:
 	debug:
@@ -32,6 +33,18 @@ nettrine.orm:
 
 nettrine.orm.annotations:
 	mapping: []
+
+nettrine.extensions.atlantic18:
+    loggable: false
+    sluggable: true
+    softDeleteable: false
+    treeable: false
+    blameable: false
+    timestampable: true
+    translatable: false
+    uploadable: false
+    sortable: false
+    ipTraceable: false
 
 nettrine.orm.cache: []
 nettrine.cache: []

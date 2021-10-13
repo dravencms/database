@@ -23,6 +23,7 @@
     "nettrine/migrations": "^v0.7.1",
     "nettrine/annotations": "^0.7.0",
     "nettrine/fixtures": "^0.6.0",
+    "nettrine/extensions-atlantic18": "^0.6.0",
     "dravencms/logging": ">=0.0.1",
     "dravencms/console": ">=0.0.1"
   },
