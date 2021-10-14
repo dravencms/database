@@ -38,7 +38,7 @@ nettrine.extensions.atlantic18:
     loggable: false
     sluggable: true
     softDeleteable: false
-    treeable: false
+    treeable: true
     blameable: false
     timestampable: true
     translatable: false
