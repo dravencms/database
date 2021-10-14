@@ -1,4 +1,5 @@
 extensions:
+	dravencms.database: Dravencms\Database\DI\DatabaseExtension
 	nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
 	nettrine.cache: Nettrine\Cache\DI\CacheExtension
 	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Dravencms\Base\DI;
+namespace Dravencms\Database\DI;
 
 
 
@@ -10,10 +10,10 @@ use Nette\DI\CompilerExtension;
 use Nette\DI\Definitions\ServiceDefinition;
 
 /**
- * Class BaseExtension
- * @package Dravencms\Structure\DI
+ * Class DatabaseExtension
+ * @package Dravencms\Database\DI
  */
-class BaseExtension extends CompilerExtension
+class DatabaseExtension extends CompilerExtension
 {
     protected static $prefix = 'database';
 

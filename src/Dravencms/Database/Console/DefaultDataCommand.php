@@ -18,16 +18,27 @@ use Symfony\Component\Console\Output\OutputInterface;
 class DefaultDataCommand extends Command
 {
     /** @var string */
-    protected static $defaultName = 'orm:default-data:load';
+    protected static $defaultName = 'database:default-data:load';
 
     /** @var string */
     protected static $defaultDescription = 'Load data fixtures to your database.';
 
-    /** @var EntityManager @inject */
-    public $em;
+    /** @var EntityManager */
+    public $entityManager;
 
-    /** @var Database @inject */
+    /** @var Database */
     public $database;
+
+    public function __construct(
+        EntityManager $entityManager,
+        Database $database
+    )
+    {
+        parent::__construct();
+
+        $this->entityManager = $entityManager;
+        $this->database = $database;
+    }
 
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -40,8 +51,8 @@ class DefaultDataCommand extends Command
             }
 
             $fixtures = $loader->getFixtures();
-            $purger = new ORMPurger($this->em);
-            $executor = new ORMExecutor($this->em, $purger);
+            $purger = new ORMPurger($this->entityManager);
+            $executor = new ORMExecutor($this->entityManager, $purger);
             $executor->setLogger(function ($message) use ($output) {
                 $output->writeln(sprintf('  <comment>></comment> <info>%s</info>', $message));
             });
