@@ -45,7 +45,7 @@ nettrine.extensions.atlantic18:
     timestampable: true
     translatable: false
     uploadable: false
-    sortable: false
+    sortable: true
     ipTraceable: false
 
 nettrine.orm.cache: []
