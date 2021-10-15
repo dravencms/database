@@ -30,7 +30,7 @@ nettrine.dbal:
 nettrine.orm:
 	entityManagerDecoratorClass: Dravencms\Database\EntityManager
 	configuration:
-		autoGenerateProxyClasses: "%debugMode%"
+		autoGenerateProxyClasses: %debugMode%
 
 nettrine.orm.annotations:
 	mapping: []
