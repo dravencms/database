@@ -30,6 +30,7 @@ nettrine.dbal:
 nettrine.orm:
 	entityManagerDecoratorClass: Dravencms\Database\EntityManager
 	configuration:
+		defaultRepositoryClassName: Dravencms\Database\EntityRepository
 		autoGenerateProxyClasses: %debugMode%
 
 nettrine.orm.annotations:
