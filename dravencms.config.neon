@@ -14,18 +14,18 @@ extensions:
 
 nettrine.dbal:
 	debug:
-		panel: "%debugMode%"
+		panel: %debugMode%
 
 	configuration:
 		sqlLogger: Nettrine\DBAL\Logger\PsrLogger(@Monolog\Logger)
 
 	connection:
-		driver: "%database.driver%"
-		host: "%database.host%"
-		user: "%database.user%"
-		password: "%database.password%"
-		dbname: "%database.dbname%"
-		port: "%database.port%"
+		driver: %database.driver%
+		host: %database.host%
+		user: %database.user%
+		password: %database.password%
+		dbname: %database.dbname%
+		port: %database.port%
 
 nettrine.orm:
 	entityManagerDecoratorClass: Dravencms\Database\EntityManager
