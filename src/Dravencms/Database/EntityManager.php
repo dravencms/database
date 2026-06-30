@@ -2,7 +2,7 @@
 
 namespace Dravencms\Database;
 
-use Nettrine\ORM\EntityManagerDecorator;
+use Doctrine\ORM\Decorator\EntityManagerDecorator;
 
 class EntityManager extends EntityManagerDecorator
 {

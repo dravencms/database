@@ -5,36 +5,30 @@ extensions:
 	nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
 	nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
 	nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
-	nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension(%consoleMode%)
 	nettrine.orm: Nettrine\ORM\DI\OrmExtension
-	nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
-	nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
-	nettrine.orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
 	nettrine.extensions.atlantic18: Nettrine\Extensions\Atlantic18\DI\Atlantic18BehaviorExtension
 
 nettrine.dbal:
 	debug:
 		panel: %debugMode%
 
-	configuration:
-		sqlLogger: Nettrine\DBAL\Logger\PsrLogger(@Monolog\Logger)
-
-	connection:
-		driver: %database.driver%
-		host: %database.host%
-		user: %database.user%
-		password: %database.password%
-		dbname: %database.dbname%
-		port: %database.port%
+	connections:
+		default:
+			driver: %database.driver%
+			host: %database.host%
+			user: %database.user%
+			password: %database.password%
+			dbname: %database.dbname%
+			port: %database.port%
 
 nettrine.orm:
-	entityManagerDecoratorClass: Dravencms\Database\EntityManager
-	configuration:
-		defaultRepositoryClassName: Dravencms\Database\EntityRepository
-		autoGenerateProxyClasses: %debugMode%
-
-nettrine.orm.annotations:
-	mapping: []
+	managers:
+		default:
+			connection: default
+			entityManagerDecoratorClass: Dravencms\Database\EntityManager
+			defaultRepositoryClassName: Dravencms\Database\EntityRepository
+			autoGenerateProxyClasses: %debugMode%
+			mapping: []
 
 nettrine.extensions.atlantic18:
     loggable: false
@@ -52,8 +46,8 @@ nettrine.orm.cache: []
 nettrine.cache: []
 nettrine.migrations:
 	table: "doctrine_migrations"
-	directory: "%appDir%/../migrations"
-	namespace: "Migrations"
+	directories:
+		Migrations: "%appDir%/../migrations"
 	versionsOrganization: "year"
 
 decorator:
@@ -63,4 +57,3 @@ decorator:
 
 services:
 	- Nettrine\Migrations\Subscriber\FixPostgreSQLDefaultSchemaSubscriber
-
