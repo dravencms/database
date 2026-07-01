@@ -25,6 +25,7 @@ nettrine.orm:
 	managers:
 		default:
 			connection: default
+                        lazyNativeObjects: true
 			entityManagerDecoratorClass: Dravencms\Database\EntityManager
 			defaultRepositoryClassName: Dravencms\Database\EntityRepository
 			autoGenerateProxyClasses: %debugMode%
