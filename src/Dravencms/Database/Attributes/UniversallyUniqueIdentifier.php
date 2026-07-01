@@ -13,11 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 trait UniversallyUniqueIdentifier
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="guid")
-     * @ORM\GeneratedValue(strategy="UUID")
      * @var string
      */
+#[ORM\Id]
+#[ORM\Column(type: "guid")]
+#[ORM\GeneratedValue(strategy: "UUID")]
     private $id;
 
 

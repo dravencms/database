@@ -13,11 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 trait Identifier
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue
      * @var integer|null
      */
+#[ORM\Id]
+#[ORM\Column(type: "integer")]
+#[ORM\GeneratedValue]
     private $id;
 
 

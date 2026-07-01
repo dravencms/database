@@ -20,7 +20,7 @@ class EntityRepository extends \Doctrine\ORM\EntityRepository
      * @return array
      * @throws \Doctrine\ORM\Mapping\MappingException
      */
-    public function findPairs(string $value, string $key = null, array $criteria = [], array $orderBy = []): array
+    public function findPairs(string $value, ?string $key = null, array $criteria = [], array $orderBy = []): array
     {
         if ($key === null) {
             $key = $this->getClassMetadata()->getSingleIdentifierFieldName();

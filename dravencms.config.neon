@@ -42,7 +42,6 @@ nettrine.extensions.atlantic18:
     sortable: true
     ipTraceable: false
 
-nettrine.orm.cache: []
 nettrine.cache: []
 nettrine.migrations:
 	table: "doctrine_migrations"
@@ -54,6 +53,3 @@ decorator:
 	Doctrine\Common\EventSubscriber:
 		tags:
 			- "nettrine.subscriber"
-
-services:
-	- Nettrine\Migrations\Subscriber\FixPostgreSQLDefaultSchemaSubscriber
